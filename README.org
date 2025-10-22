@@ -38,7 +38,7 @@ Check out the different folders of this repository for different examples and pr
     title={ros-examples},
     month={October},
     year={2025},
-    url={https://gitlab.dit.htwk-leipzig.de/eric.elbing/ros-examples}
+    url={https://github.com/erelbng/ros-examples}
   }
 #+END_SRC
 
