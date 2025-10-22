@@ -1,0 +1,37 @@
+#+title: diffbot
+#+author: Eric Elbing
+#+filetags: :draft:
+#+OPTIONS: num:nil toc:nil date:nil
+#+LATEX: \setlength\parindent{0pt}
+#+LATEX_HEADER: \usepackage[a4paper, total={170mm,257mm}, left=20mm, top=20mm]{geometry}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{arrows.meta}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage[inline]{asymptote}
+#+LATEX_COMPILER: xelatex
+
+introductory example based on [[https://github.com/joshnewans/articubot_one][articubot_one]], implementing a simple differential drive robot
+
+using /ros2 control, ignition gazebo, rviz2/
+
+Build the package using ~colcon build~ and source the environment using ~source install/local_setup.sh~. 
+Then you can launch using:
+#+BEGIN_SRC shell
+  ros2 launch diffbot launch_sim.launch.py
+#+END_SRC
+
+To control your robot use the terminal with:
+#+BEGIN_SRC shell
+  ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p stamped:=true -r /cmd_vel:=/diff_cont/cmd_vel 
+#+END_SRC
+
+* Dependencies
+Install the following packages for this project to work properly:
+- ros-humble-ros2-control
+- ros-humble-ros2-controllers
+- ros-humble-twist-mux
+- ros-humble-twist-stamper
+- ros-humble-ros-gz
+- ros-humble-ros-gz-sim
+- ros-humble-gz-ros2-control
+

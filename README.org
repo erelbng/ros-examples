@@ -1,0 +1,46 @@
+#+title: ros-examples
+#+author: Eric Elbing
+#+filetags: :draft:
+#+OPTIONS: num:nil toc:nil date:nil
+#+LATEX: \setlength\parindent{0pt}
+#+LATEX_HEADER: \usepackage[a4paper, total={170mm,257mm}, left=20mm, top=20mm]{geometry}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{arrows.meta}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage[inline]{asymptote}
+#+LATEX_COMPILER: xelatex
+
+
+* Getting started
+Check out the different folders of this repository for different examples and project templates:
+  - diffbot
+
+    introductory example based on [[https://github.com/joshnewans/articubot_one][articubot_one]], implementing a simple differential drive robot
+
+    using /ros2 control, ignition gazebo, rviz2/
+    only working on /ubuntu/
+  - diffbot_universal
+    
+    basically diffbot, but with a different control implementation as well as a simulator that actually works on more than one OS
+
+    using /own control implementation, MuJoCo/
+  - turtlebot
+
+    A [[https://clearpathrobotics.com/turtlebot-4/][TurtleBot4]] implementation in ROS using /MuJoCo/ and /OpenCV/, publishing several topics like an IMU or Camera topic for /data-science/ and /computer vision/
+  - pincherx
+
+    A compact manipulator arm ([[https://www.trossenrobotics.com/pincherx100][PincherX100]]), implemented in ROS using /MuJoCo/ and /OpenCV/, for teleoperation tasks or more...
+    
+* BibTeX
+#+BEGIN_SRC text
+  @misc{ros2025examples,
+    author={Eric Elbing},
+    title={ros-examples},
+    month={October},
+    year={2025},
+    url={https://gitlab.dit.htwk-leipzig.de/eric.elbing/ros-examples}
+  }
+#+END_SRC
+
+* Contact
+For additional technical support and other questions please reach out to [[mailto:eric.elbing@htwk-leipzig.de][eric.elbing@htwk-leipzig.de]].

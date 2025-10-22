@@ -1,0 +1,43 @@
+#+title: pincherx
+#+author: Eric Elbing
+#+filetags: :draft:
+#+OPTIONS: num:nil toc:nil date:nil
+#+LATEX: \setlength\parindent{0pt}
+#+LATEX_HEADER: \usepackage[a4paper, total={170mm,257mm}, left=20mm, top=20mm]{geometry}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{arrows.meta}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage[inline]{asymptote}
+#+LATEX_COMPILER: xelatex
+
+Implementation of the PincherX 100 using /MuJoCo/ and /OpenCV/.
+
+Build the package using ~colcon build~ and source the environment using ~source install/local_setup.sh~. 
+Then you can launch using:
+#+BEGIN_SRC shell
+  ros2 launch pincherx launch_sim.launch.py
+#+END_SRC
+
+To control your robot use the terminal with:
+#+BEGIN_SRC shell
+  ros2 topic pub /joint_commands sensor_msgs/JointState "
+  header:
+    stamp: {sec: 0, nanosec: 0}
+  name: ['waist', 'shoulder', 'elbow', 'wrist', 'gripper']
+  position: [0.0, 0.6, -0.8, 0.4, 0.2]
+  velocity: []
+  effort: []
+  " -1
+#+END_SRC
+
+The following topics are published
+#+BEGIN_SRC text
+/camera
+/joint_commands
+/joint_states
+#+END_SRC
+which you can either watch in your terminal using ~ros2 topic echo /joint_states~ or ~rviz2~ (for the camera)
+
+* Dependencies
+Install the following packages for this project to work properly:
+- TODO
