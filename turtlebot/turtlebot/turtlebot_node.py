@@ -10,6 +10,7 @@ from ament_index_python.packages import get_package_share_directory
 from cv_bridge import CvBridge
 from geometry_msgs.msg import TransformStamped, Twist
 from mujoco.glfw import glfw
+from mujoco import viewer
 from nav_msgs.msg import Odometry
 from OpenGL.GL import *
 from rclpy.node import Node
@@ -94,7 +95,7 @@ class TurtleBotSim(Node):
         self.bridge = CvBridge()
 
         # === MuJoCo Viewer ===
-        self.viewer = mujoco.viewer.launch_passive(
+        self.viewer = viewer.launch_passive(
             self.model, self.data, show_left_ui=False, show_right_ui=False
         )
 

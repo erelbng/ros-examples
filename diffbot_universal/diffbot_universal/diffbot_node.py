@@ -7,6 +7,7 @@ import numpy as np
 import rclpy
 from ament_index_python.packages import get_package_share_directory
 from geometry_msgs.msg import TransformStamped, Twist
+from mujoco import viewer
 from nav_msgs.msg import Odometry
 from rclpy.node import Node
 from rclpy.time import Time
@@ -66,7 +67,7 @@ class DiffBotSim(Node):
         self.x = 0.0
         self.y = 0.0
         self.theta = 0.0
-        self.viewer = mujoco.viewer.launch_passive(
+        self.viewer = viewer.launch_passive(
             self.model, self.data, show_left_ui=False, show_right_ui=False
         )
 
