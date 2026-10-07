@@ -1,2 +1,5 @@
+remote_theme: htwk-prodlog/project-page-template
+plugins:
+  - jekyll-remote-theme
 title: ros-examples
 description: ROS 2 robot examples with MuJoCo and Gazebo
